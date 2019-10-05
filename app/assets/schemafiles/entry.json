@@ -1,0 +1,63 @@
+{
+    "schema-name": "",
+    "id": "",
+    "meta-data": [{
+        "type": "",
+        "name": "",
+        "value": ""
+    }],
+    "data": {
+        "language": "",
+        "dict-forms": [{
+            "form": "",
+            "type": "",
+            "id": ""
+        }],
+        "parts": [{
+            "text": "",
+            "related-id": ""
+        }],
+        "inflections": [{
+            "form": "",
+            "analysis": {
+                "text": "",
+                "related-id": "",
+                "parts": [{
+                    "text": "",
+                    "related-id": ""
+                }]
+            },
+            "id": ""
+        }],
+        "variants": [{
+            "form": "",
+            "id": "",
+            "related-id": ""
+        }],
+        "attestations": [{
+            "form": {
+                "shape-info": {
+                    "points": [{
+                        "x": "",
+                        "y": "",
+                        "z": ""
+                    }],
+                    "type": ""
+                },
+                "context-info": {
+                    "format": "",
+                    "related-ids": []
+                }
+            },
+            "id": "",
+            "related-id": ""
+        }],
+        "translations": [{
+            "sense": "",
+            "language": "",
+            "id": "",
+            "related-ids": []
+        }]
+    },
+    "view-order": ["id", "meta-data", "data"]
+}

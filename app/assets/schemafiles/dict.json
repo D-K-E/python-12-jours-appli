@@ -1,0 +1,10 @@
+{
+    "entries": [{
+        "entry-schema-path": "",
+        "entry-schema-name": "",
+        "related-entries": []
+    }],
+    "title": "",
+    "info": "",
+    "view-order": ["title", "info", "entries"]
+}
