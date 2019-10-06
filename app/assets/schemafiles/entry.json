@@ -1,4 +1,5 @@
 {
+    "type": "Entry",
     "schema-name": "",
     "id": "",
     "meta-data": [{
@@ -58,6 +59,5 @@
             "id": "",
             "related-ids": []
         }]
-    },
-    "view-order": ["id", "meta-data", "data"]
+    }
 }

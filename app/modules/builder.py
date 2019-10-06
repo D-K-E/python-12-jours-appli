@@ -11,6 +11,7 @@ schema to create an underlying tree representation of a tree widget
 # License: see, LICENSE
 
 from PySide2.QtWidgets import QTreeWidgetItem
+from collections import namedtuple
 
 
 class ItemObj(QTreeWidgetItem):
@@ -181,3 +182,47 @@ def transform_complex_element_to_tree_item(name: str,
     elif isinstance(value, list) or isinstance(value, tuple):
         item.addChild(transform_complex_element_to_tree_item(name, val))
     return item
+
+
+def check_schema(schema: dict):
+    "Check schema for having several attributes"
+    if "type" not in schema:
+        mess = "Schema does not contain a type field."
+        mess += " Type field is required for defining model type."
+        mess += " Please change your schema file accordingly"
+        raise ValueError(mess)
+    model_name = schema["type"]
+    if model_name != "Entry" and model_name != "Dictionary":
+        mess = "Specified schema type: " + model_name
+        mess += " is not supported only Entry and Dictionary"
+        mess += " are supported as schema types. If your schema"
+        mess += " is conceptually equivalent to that of Entry or Dictionary"
+        mess += " please specify in type field the equivalent entity: Entry"
+        mess += " , Dictionary, and save your old value to a different field."
+        raise ValueError(mess)
+    if "name" not in schema:
+        mess = "Please specify a name field with a unique value for your"
+        mess += " schema to distinguish it"
+        raise ValueError(mess)
+
+
+def model_builder(schema: dict):
+    "Build model from given schema dict"
+    check_schema(schema)
+    model_name = schema["type"]
+    model_name += model_name + "Model"
+    keys = [k for k in schema.keys()]
+    bad_keys = []
+    for k in keys:
+        if not all([c in
+                    ["wxcvbnqsdfghjklmazertyuiopWXCVBNQSDFGHJKLMAZERTYUIOP0123456789"]
+                    for c in k
+                    ]):
+            bad_keys.append(k)
+    #
+    if bad_keys:
+        mess = "Some of the key names are not supported please correct them,"
+        mess += " so that they don't have any special characters as well as"
+        mess += " space. They should not start with a number as well."
+        raise ValueError(mess)
+    return namedtuple(model_name, keys)

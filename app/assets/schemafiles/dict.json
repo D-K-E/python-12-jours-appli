@@ -2,9 +2,9 @@
     "entries": [{
         "entry-schema-path": "",
         "entry-schema-name": "",
-        "related-entries": []
+        "entry": {}
     }],
     "title": "",
-    "info": "",
-    "view-order": ["title", "info", "entries"]
+    "info": ""
+    "type": "Dictionary"
 }
