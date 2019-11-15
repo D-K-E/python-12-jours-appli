@@ -2,14 +2,27 @@
 Spécification
 ##############
 
+Auteur: Kaan Eraslan
+
+
 Le vocabulaire employé dans ce document conforme au `RFC 2116 <https://tools.ietf.org/rfc/rfc2119.txt>`_
 
-Le programme a trois principales fonctions:
+Aperçu
+-------
+
+Celui-ci est un document de spéficication technique d'une application au but éducatif
+conçu pour la série de `python dans 12 jours <https://github.com/D-K-E/python-12-jours>`_.
+Le programme regroupe les concepts qu'on vient de voir dans la série.
+
+Réquisitions
+-------------
+
+Il a deux principales fonctionalités:
 
 - Affichage et modification des fichiers textes.
 - Filtrage des chemins en fonction des mots clés.
 
-L'interface graphique du programme a 5 composants:
+Il a aussi un interface graphique avec 5 composants:
 
 - Zone d'affichage et modification de texte
 - Un champs de saisi pour entrer les mots clés qui filtrent les chemins
@@ -65,4 +78,15 @@ Une vue possible de l'interface graphique est:
 Affichage et Modification des Textes
 -------------------------------------
 
-Le format de texte accepté est texte brut
+Le format de texte accepté est texte brut dont l'extension est :code:`.txt`. 
+Le programme reçoit le chemin d'un fichier :code:`.txt`, montre son contenu
+dans la zone d'affichage de contenu. On permet l'utilisateur de modifier 
+le contenu dans la zone.
+
+Filtrage des Chemins
+----------------------
+
+En fonction d'un mot clé saisi par l'utilisateur, le programme filtre 
+les chemins qui renvoient aux textes qui ne contiennent pas le mot clé. 
+Il, donc garde uniquement les chemins de texte qui contiennent le mot clé.
+Les chemins gardés sont affichés dans la zone d'affichage des chemins.
